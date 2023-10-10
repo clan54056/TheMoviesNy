@@ -29,7 +29,8 @@
             <Button 
                 FontSize="20"
                 Grid.Column="1" 
-                Content="Tilføj" />
+                Content="Tilføj"
+                Command="{Binding AddMovieCommand}"/>
         </Grid>
     
         <Grid Grid.Row="1" Margin="0 20 0 0">
@@ -38,9 +39,14 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <components:MoviesList Grid.Column="0"/>
-            
-            <components:MoviesDetails Grid.Column="1" Margin="20 0 0 0"/>
+            <components:MoviesList 
+                Grid.Column="0" 
+                DataContext="{Binding MoviesListViewModel}"/>
+
+            <components:MoviesDetails 
+                Grid.Column="1" 
+                Margin="20 0 0 0" 
+                DataContext="{Binding MoviesDetailsViewModel}"/>
         </Grid>
     </Grid>
     

@@ -61,8 +61,21 @@
     <Compile Include="Components\MoviesList.xaml.cs">
       <DependentUpon>MoviesList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddMovieView.xaml.cs">
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Stores\SelectedMovieStore.cs" />
+    <Compile Include="ViewModels\AddMovieViewModel.cs" />
+    <Compile Include="ViewModels\MoviesDetailsViewModel.cs" />
+    <Compile Include="ViewModels\MoviesListItemViewModel.cs" />
+    <Compile Include="ViewModels\MoviesListViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AddMovieView.xaml.cs">
       <DependentUpon>AddMovieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ClearableTextbox.xaml.cs">
+      <DependentUpon>ClearableTextbox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
     <Page Include="Components\MoviesDetails.xaml">
       <SubType>Designer</SubType>
@@ -84,7 +97,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\AddMovieView.xaml">
+    <Page Include="Views\AddMovieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ClearableTextbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UserControls\Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,8 +136,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

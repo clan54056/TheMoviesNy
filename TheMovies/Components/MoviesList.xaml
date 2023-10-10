@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TheMovies.Components"
+             xmlns:local="clr-namespace:TheMovies.Components" 
+             xmlns:userControls="clr-namespace:TheMovies.Views.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -12,7 +13,10 @@
             BorderThickness="1" 
             SnapsToDevicePixels="True"
             CornerRadius="5">
-
+            
+            <!--Sets a mask on top of the ListView so the 
+            ListView does not go over the rounded courners
+            and makes the border look bad-->
             <Grid>
                 <Grid.OpacityMask>
                     <VisualBrush Visual="{Binding ElementName=border}"/>
@@ -21,7 +25,32 @@
                     x:Name="border"
                     Background="White"
                     CornerRadius="5" />
-                <ListView BorderThickness="0"/>
+
+                <ListView BorderThickness="0" ItemsSource="{Binding MoviesListItemViewModels}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10" TextBlock.FontSize="16">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Column="0" Text="{Binding Title}"/>
+
+                                    <userControls:Edit Grid.Column="1"/>
+
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
 
         </Border>
