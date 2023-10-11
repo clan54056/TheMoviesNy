@@ -10,8 +10,9 @@
         Height="450" 
         Width="800"
         FontSize="14">
-    
-    <Grid Margin="25">
-        <views:AddMovieView/>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="25">
+            <views:AddMovieView DataContext="{Binding MovieViewModel}"/>
+        </Grid>
+    </ScrollViewer>
 </Window>

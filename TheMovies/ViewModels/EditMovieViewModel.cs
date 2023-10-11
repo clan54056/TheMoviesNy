@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace TheMovies.ViewModels
 {
-    
-    public class AddMovieViewModel : ViewModelBase
+    public class EditMovieViewModel
     {
         public MovieDetailsFormViewModel MovieDetailsFormViewModel { get; }
 
-        public AddMovieViewModel()
+        public EditMovieViewModel()
         {
             MovieDetailsFormViewModel = new MovieDetailsFormViewModel();
         }

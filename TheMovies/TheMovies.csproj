@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Components\MovieDetailsForm.xaml.cs">
+      <DependentUpon>MovieDetailsForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\MoviesDetails.xaml.cs">
       <DependentUpon>MoviesDetails.xaml</DependentUpon>
     </Compile>
@@ -62,13 +65,21 @@
       <DependentUpon>MoviesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Stores\ModelNavigationStore.cs" />
     <Compile Include="Stores\SelectedMovieStore.cs" />
     <Compile Include="ViewModels\AddMovieViewModel.cs" />
+    <Compile Include="ViewModels\EditMovieViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MovieDetailsFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\MoviesDetailsViewModel.cs" />
     <Compile Include="ViewModels\MoviesListItemViewModel.cs" />
     <Compile Include="ViewModels\MoviesListViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AddMovieView.xaml.cs">
+      <DependentUpon>AddMovieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\AddMovieView.xaml.cs">
       <DependentUpon>AddMovieView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\ClearableTextbox.xaml.cs">
@@ -77,6 +88,13 @@
     <Compile Include="Views\UserControls\Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\EditMovieView.xaml.cs">
+      <DependentUpon>EditMovieView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Components\MovieDetailsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\MoviesDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,11 +119,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserControls\ClearableTextbox.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\UserControls\AddMovieView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ClearableTextbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\EditMovieView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

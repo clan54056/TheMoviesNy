@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ReolMarkedet.WPF.View.UserControls
+namespace TheMovies.Views.UserControls
 {
     /// <summary>
     /// Interaction logic for ClearableTextbox.xaml
@@ -35,7 +35,8 @@ namespace ReolMarkedet.WPF.View.UserControls
         public string Placeholder
         {
             get { return placeholder; }
-            set { 
+            set
+            {
                 placeholder = value;
 
                 // do not do this..!
@@ -58,7 +59,7 @@ namespace ReolMarkedet.WPF.View.UserControls
         {
             if (string.IsNullOrEmpty(txtInput.Text))
                 tbPlaceholder.Visibility = Visibility.Visible;
-            else 
+            else
                 tbPlaceholder.Visibility = Visibility.Hidden;
         }
 
