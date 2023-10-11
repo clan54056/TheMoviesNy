@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\OpenAddMovieCommand.cs" />
     <Compile Include="Components\MovieDetailsForm.xaml.cs">
       <DependentUpon>MovieDetailsForm.xaml</DependentUpon>
     </Compile>
@@ -64,6 +66,7 @@
     <Compile Include="Components\MoviesList.xaml.cs">
       <DependentUpon>MoviesList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModalControl\Modal.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Stores\ModelNavigationStore.cs" />
     <Compile Include="Stores\SelectedMovieStore.cs" />

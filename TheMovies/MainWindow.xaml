@@ -4,15 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheMovies" 
-        xmlns:views="clr-namespace:TheMovies.View"
+        xmlns:views="clr-namespace:TheMovies.View" 
+        xmlns:custom="clr-namespace:TheMovies.Models.ModalControl" 
+        xmlns:vms="clr-namespace:TheMovies.ViewModels"
+        xmlns:usercontrols="clr-namespace:TheMovies.Views.UserControls"
         mc:Ignorable="d"
         Title="The Movies" 
         Height="450" 
         Width="800"
         FontSize="14">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vms:AddMovieViewModel}">
+            <usercontrols:AddMovieView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:EditMovieViewModel}">
+            <usercontrols:EditMovieView/>
+        </DataTemplate>
+    </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <Grid Margin="25">
-            <views:AddMovieView DataContext="{Binding MovieViewModel}"/>
+        <Grid>
+            <custom:Modal Panel.ZIndex="1" IsOpen="{Binding IsModalOpen}">
+                <ContentControl Margin="50 20" Content="{Binding CurrentModelViewModel}"/>
+            </custom:Modal>
+            <views:AddMovieView Margin="25" DataContext="{Binding MovieViewModel}"/>
         </Grid>
     </ScrollViewer>
 </Window>

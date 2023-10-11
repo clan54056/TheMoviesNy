@@ -27,7 +27,7 @@ namespace TheMovies
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            MovieViewModel movieViewModel = new MovieViewModel(_selectedMovieStore);
+            MovieViewModel movieViewModel = new MovieViewModel(_selectedMovieStore, _modelNavigationStore);
 
             MainWindow = new MainWindow()
             {

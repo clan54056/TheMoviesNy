@@ -24,7 +24,9 @@ namespace TheMovies.Stores
 			}
 		}
 
-		public event Action CurrentViewModelChanged;
+        public bool IsOpen => CurrentViewModel != null;
+
+        public event Action CurrentViewModelChanged;
 
 
 
