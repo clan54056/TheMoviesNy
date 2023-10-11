@@ -10,17 +10,17 @@ namespace TheMovies.Stores
 {
     public class SelectedMovieStore
     {
-		private Movie _movie;
+		private Movie _selectedMovie;
 
 		public Movie SelectedMovie
 		{
 			get 
 			{ 
-				return _movie; 
+				return _selectedMovie; 
 			}
 			set 
 			{ 
-				_movie = value;
+				_selectedMovie = value;
 				SelectedMovieChanged?.Invoke();
 			}
 		}

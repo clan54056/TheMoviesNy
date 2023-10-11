@@ -24,8 +24,23 @@ namespace TheMovies.ViewModels
         public MoviesDetailsViewModel(SelectedMovieStore selectedMovieStore)
         {
 
-            this._selectedMovieStore = selectedMovieStore;
+            _selectedMovieStore = selectedMovieStore;
+
+            _selectedMovieStore.SelectedMovieChanged += _selectedMovieStore_SelectedMovieChanged;
         }
 
+        protected override void Dispose()
+        {
+            _selectedMovieStore.SelectedMovieChanged -= _selectedMovieStore_SelectedMovieChanged;
+            base.Dispose();
+        }
+
+        private void _selectedMovieStore_SelectedMovieChanged()
+        {
+            OnPropertyChanged(nameof(HasSelectedMovie));
+            OnPropertyChanged(nameof(Title));
+            OnPropertyChanged(nameof(Length));
+            OnPropertyChanged(nameof(Genre));
+        }
     }
 }

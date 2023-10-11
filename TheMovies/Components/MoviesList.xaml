@@ -26,7 +26,10 @@
                     Background="White"
                     CornerRadius="5" />
 
-                <ListView BorderThickness="0" ItemsSource="{Binding MoviesListItemViewModels}">
+                <ListView 
+                    BorderThickness="0" 
+                    SelectedItem="{Binding SelectedMovieListItemViewModel}" 
+                    ItemsSource="{Binding MoviesListItemViewModels}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
